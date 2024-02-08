@@ -18,6 +18,7 @@ namespace ClothingStoreApplication.Controllers
         public async Task<ActionResult<IEnumerable<ClothItem>>> GetClothCategory()
         {
             var ClothProducts = await _service.GetAllCategory();
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
             return Ok(ClothProducts);
