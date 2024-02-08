@@ -1,11 +1,6 @@
 ﻿using ClothingStore.Application.Interface;
 using ClothingStore.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClothingStore.Infrastructure.Repository
 {
@@ -22,13 +17,13 @@ namespace ClothingStore.Infrastructure.Repository
         {
             return await _dbSet.ToListAsync();
         }
-
-        public async Task<Entity> GetByIdAsync(int id)
+        public async Task<Entity?> GetByIdAsync(int id)
         {
             return await _dbSet.FindAsync(id);
         }
 
-          
+
+
 
     }
 }

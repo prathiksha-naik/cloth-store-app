@@ -44,6 +44,7 @@ C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingS
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Application\obj\Debug\net8.0\ClothingStore.Application.AssemblyInfoInputs.cache
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Application\obj\Debug\net8.0\ClothingStore.Application.AssemblyInfo.cs
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Application\obj\Debug\net8.0\ClothingStore.Application.csproj.CoreCompileInputs.cache
+C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Application\obj\Debug\net8.0\ClothingStore.Application.sourcelink.json
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Application\obj\Debug\net8.0\ClothingStore.Application.csproj.CopyComplete
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Application\obj\Debug\net8.0\ClothingStore.Application.dll
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Application\obj\Debug\net8.0\refint\ClothingStore.Application.dll

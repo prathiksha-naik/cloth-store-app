@@ -3,6 +3,7 @@ using ClothingStore.Application.Service;
 using ClothingStore.Domain.Entities;
 using ClothingStore.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,14 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(ClothItemGeneric
 builder.Services.AddScoped<ClothItemService>();
 builder.Services.AddScoped<ClothCategoryService>();
 builder.Services.AddScoped<ClothSizeService>();
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    });
+
+
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

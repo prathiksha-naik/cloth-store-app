@@ -12,14 +12,21 @@ namespace ClothingStore.Infrastructure.Repository
             _context = context;
 
         }
-        public bool ClothItemExists(int clothItemId)
+
+        public async Task<IEnumerable<ClothItem>> GetAllClothProducts()
         {
-            return _context.ClothItems.Any(c => c.ClothItemId == clothItemId);
+            return await _context.ClothItems.Include(size => size.SizeVariants).ToListAsync();
+
         }
 
         public async Task<IEnumerable<ClothItem>> GetClothItemsByPriceRangeAsync(decimal minPrice, decimal maxPrice)
         {
             return await _context.ClothItems.Where(item => item.Price >= minPrice && item.Price <= maxPrice).ToListAsync(); ;
+        }
+
+        public bool ClothItemExists(int clothItemId)
+        {
+            return _context.ClothItems.Any(c => c.ClothItemId == clothItemId);
         }
 
 

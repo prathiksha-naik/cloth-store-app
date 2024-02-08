@@ -38,10 +38,10 @@ namespace ClothingStoreApplication.Controllers
         [HttpGet("bySizeRange")]
         public async Task<IActionResult> GetClothItemsBySizeRange([FromQuery] List<string> sizes)
         {
-            var nonExistentSizes = sizes.Where(size => !_service.ClothItemSizeExists(size));
+            var sizeNotExist = sizes.Where(size => !_service.ClothItemSizeExists(size));
 
-            if (nonExistentSizes.Any())
-                return NotFound($"Sizes not found: {string.Join(", ", nonExistentSizes)}");
+            if (sizeNotExist.Any())
+                return NotFound($"Sizes not found: {string.Join(", ", sizeNotExist)}");
 
             var clothItems = await _service.GetClothItemsBySizeRangeAsync(sizes);
             return Ok(clothItems);

@@ -21,10 +21,12 @@ namespace ClothingStore.Infrastructure.Repository
 
         public async Task<IEnumerable<ClothItem>> GetClothItemsBySizeRangeAsync(List<string> sizes)
         {
-            return await _context.SizeVariants
-                .Where(item => sizes.Contains(item.Size))
-                .Select(item => item.ClothItem)
-                .ToListAsync();
+                return await _context.SizeVariants
+                    .Where(item => sizes.Contains(item.Size))
+                    .Select(item => item.ClothItem)
+                    .ToListAsync();
+            
+            
         }
 
 

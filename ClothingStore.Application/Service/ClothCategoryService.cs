@@ -40,6 +40,10 @@ namespace ClothingStore.Application.Service
         {
             return await _categoryRepository.GetClothItemsByCategoryAndClothCategoryAsync(categoryId, clothCategoryId);
         }
+        public async Task<IEnumerable<ClothItem>> GetClothItemsByBrandNamesAsync(IEnumerable<string> brandNames)
+        {
+            return await _categoryRepository.GetClothItemsByBrandNamesAsync(brandNames);
+        }
 
         public bool CategoryItemExist(int categoryId)
         {

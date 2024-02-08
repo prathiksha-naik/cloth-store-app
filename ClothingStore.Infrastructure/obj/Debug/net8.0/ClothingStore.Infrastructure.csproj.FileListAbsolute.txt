@@ -37,6 +37,12 @@ C:\Users\EI13144\source\repos\ClothingStoreApplication\ClothStoreApplication\Clo
 C:\Users\EI13144\source\repos\ClothingStoreApplication\ClothStoreApplication\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.pdb
 C:\Users\EI13144\source\repos\ClothingStoreApplication\ClothStoreApplication\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.genruntimeconfig.cache
 C:\Users\EI13144\source\repos\ClothingStoreApplication\ClothStoreApplication\ClothingStore.Infrastructure\obj\Debug\net8.0\ref\ClothingStore.Infrastructure.dll
+C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.AssemblyInfo.cs
+C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.sourcelink.json
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\bin\Debug\net8.0\ClothingStore.Infrastructure.deps.json
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\bin\Debug\net8.0\ClothingStore.Infrastructure.runtimeconfig.json
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\bin\Debug\net8.0\ClothingStore.Infrastructure.dll
@@ -45,11 +51,6 @@ C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingS
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\bin\Debug\net8.0\ClothingStore.Domain.dll
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\bin\Debug\net8.0\ClothingStore.Application.pdb
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\bin\Debug\net8.0\ClothingStore.Domain.pdb
-C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.csproj.AssemblyReference.cache
-C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.AssemblyInfoInputs.cache
-C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.AssemblyInfo.cs
-C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.csproj.CoreCompileInputs.cache
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.csproj.CopyComplete
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\ClothingStore.Infrastructure.dll
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Infrastructure\obj\Debug\net8.0\refint\ClothingStore.Infrastructure.dll

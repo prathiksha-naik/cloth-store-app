@@ -11,6 +11,7 @@ namespace ClothingStore.Application.Interface
         //Task<IEnumerable<ClothItem>> GetClothItemsByClothCategoryAsync(int clothCategoryId);
         //Task<IEnumerable<ClothItem>> GetClothItemsByCategoryAndClothCategoryAsync(int categoryId, int clothCategoryId);
         Task<IEnumerable<ClothItem>> GetClothItemsByPriceRangeAsync(decimal minPrice, decimal maxPrice);
+        Task<IEnumerable<ClothItem>> GetAllClothProducts();
         bool ClothItemExists(int clothItemId);
 
     }

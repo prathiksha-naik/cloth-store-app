@@ -2,20 +2,20 @@
 using ClothingStore.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace ClothingStoreApplication.Controllers
 {
-    [Route("[controller]")]
     [ApiController]
-    public class CategoryController : Controller
+    public class CategoryController : ControllerBase
     {
         private readonly ClothCategoryService _service;
-        public CategoryController(ClothCategoryService service) 
+        public CategoryController(ClothCategoryService service)
         {
             _service = service;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<ClothItem>>> GetCategoryProducts()
+        [HttpGet("GetCategory")]
+        public async Task<ActionResult<IEnumerable<ClothItem>>> GetClothCategory()
         {
             var ClothProducts = await _service.GetAllCategory();
             if (!ModelState.IsValid)
@@ -23,7 +23,7 @@ namespace ClothingStoreApplication.Controllers
             return Ok(ClothProducts);
         }
 
-        [HttpGet("{categoryId}")]
+        [HttpGet("GetCategoryById")]
         public async Task<ActionResult<ClothItem>> GetCategoryById(int categoryId)
         {
             var clothItem = _service.CategoryItemExist(categoryId);
@@ -35,23 +35,28 @@ namespace ClothingStoreApplication.Controllers
             return Ok(product);
         }
 
-        [HttpGet("category/{categoryId}")]
+        [HttpGet("GetClothItemsByCategory")]
         public async Task<IEnumerable<ClothItem>> GetClothItemsByCategoryAsync(int categoryId)
         {
             return await _service.GetClothItemsByCategoryAsync(categoryId);
         }
 
-        [HttpGet("clothcategory/{clothCategoryId}")]
+        [HttpGet("GetClothItemsByClothCategory")]
         public async Task<IEnumerable<ClothItem>> GetClothItemsByClothCategoryAsync(int clothCategoryId)
         {
             return await _service.GetClothItemsByClothCategoryAsync(clothCategoryId);
         }
 
-        [HttpGet("category/{categoryId}/clothcategory/{clothCategoryId}")]
+        [HttpGet("GetClothItemsByCategoryAndClothCategory")]
         public async Task<IEnumerable<ClothItem>> GetClothItemsByCategoryAndClothCategoryAsync(int categoryId, int clothCategoryId)
         {
             return await _service.GetClothItemsByCategoryAndClothCategoryAsync(categoryId, clothCategoryId);
         }
 
+        [HttpGet("GetClothItemsByBrandNames")]
+        public async Task<IEnumerable<ClothItem>> GetClothItemsByBrandNamesAsync([FromQuery] IEnumerable<string> brandNames)
+        {
+            return await _service.GetClothItemsByBrandNamesAsync(brandNames);
+        }
     }
 }

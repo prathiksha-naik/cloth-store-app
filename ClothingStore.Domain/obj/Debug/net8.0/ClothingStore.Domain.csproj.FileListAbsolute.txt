@@ -36,6 +36,7 @@ C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingS
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Domain\obj\Debug\net8.0\ClothingStore.Domain.AssemblyInfoInputs.cache
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Domain\obj\Debug\net8.0\ClothingStore.Domain.AssemblyInfo.cs
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Domain\obj\Debug\net8.0\ClothingStore.Domain.csproj.CoreCompileInputs.cache
+C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Domain\obj\Debug\net8.0\ClothingStore.Domain.sourcelink.json
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Domain\obj\Debug\net8.0\ClothingStore.Domain.dll
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Domain\obj\Debug\net8.0\refint\ClothingStore.Domain.dll
 C:\Users\EI13144\source\repos\ClothingStoreApplication\cloth-store-app\ClothingStore.Domain\obj\Debug\net8.0\ClothingStore.Domain.pdb

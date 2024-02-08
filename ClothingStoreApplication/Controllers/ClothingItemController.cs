@@ -41,6 +41,7 @@ namespace ClothingStoreApplication.Controllers
             return await _service.GetClothItemsByPriceRangeAsync(minPrice, maxPrice);
         }
 
+
         //[HttpGet("SizeVariant/{clothItemId}")]
         //public IActionResult GetClothBySize(int clothItemId)
         //{

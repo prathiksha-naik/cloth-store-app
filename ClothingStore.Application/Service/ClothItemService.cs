@@ -20,7 +20,7 @@ namespace ClothingStore.Application.Service
         }
         public async Task<IEnumerable<ClothItem>> GetAllClothItems()
         {
-            return await _repository.GetAllAsync();
+            return await _clothItemRepository.GetAllClothProducts();
         }
 
         public async Task<ClothItem> GetClothItemById(int clothItemId)
