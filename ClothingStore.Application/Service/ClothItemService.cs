@@ -34,6 +34,7 @@ namespace ClothingStore.Application.Service
         public bool ClothItemExists(int clothItemId)
         {
             return  _clothItemRepository.ClothItemExists(clothItemId);
+            
         }
     }
 }
