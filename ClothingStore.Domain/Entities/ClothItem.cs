@@ -19,6 +19,8 @@ public partial class ClothItem
 
     public int? BrandId { get; set; }
 
+    public string? Description { get; set; }
+
     public virtual Brand? Brand { get; set; }
 
     public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
@@ -34,6 +36,4 @@ public partial class ClothItem
     public virtual ICollection<SizeVariant> SizeVariants { get; set; } = new List<SizeVariant>();
 
     public virtual ICollection<Wishlist> Wishlists { get; set; } = new List<Wishlist>();
-
-    //public List<string> AvailableSizes { get; set; } = new List<string>();
 }

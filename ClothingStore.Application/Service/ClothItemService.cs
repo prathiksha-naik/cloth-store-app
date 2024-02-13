@@ -19,10 +19,10 @@ namespace ClothingStore.Application.Service
             _clothItemRepository = clothItemRepository;
         }
 
-        public async Task<List<ClothItemDto>> GetAllClothItemsAsync()
+        public async Task<IEnumerable<ClothItemDto>> GetAllClothItemsAsync()
         {
-            var clothItems = _mapper.Map<List<ClothItemDto>>(_clothItemRepository.GetAllClothProducts());
-            return clothItems;
+            var clothItems = await _clothItemRepository.GetAllClothProducts();
+            return _mapper.Map<IEnumerable<ClothItemDto>>(clothItems);
         }
         //public async Task<IEnumerable<ClothItem>> GetAllClothItems()
         //{

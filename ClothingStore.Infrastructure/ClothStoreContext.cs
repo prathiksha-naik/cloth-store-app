@@ -37,9 +37,9 @@ public partial class ClothStoreContext : DbContext
 
     public virtual DbSet<Wishlist> Wishlists { get; set; }
 
-//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-//        => optionsBuilder.UseSqlServer("Data Source=ELW5196;Initial Catalog=ClothStore;Integrated Security=True;Trust Server Certificate=True");
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Data Source=ELW5196;Initial Catalog=ClothStore;Integrated Security=True;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -112,6 +112,9 @@ public partial class ClothStoreContext : DbContext
             entity.Property(e => e.BrandId).HasColumnName("BrandID");
             entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
             entity.Property(e => e.ClothCategoryId).HasColumnName("ClothCategoryID");
+            entity.Property(e => e.Description)
+                .HasMaxLength(255)
+                .IsUnicode(false);
             entity.Property(e => e.ItemName)
                 .HasMaxLength(25)
                 .IsUnicode(false);
@@ -219,7 +222,7 @@ public partial class ClothStoreContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Password)
-                .HasMaxLength(20)
+                .HasMaxLength(200)
                 .IsUnicode(false);
             entity.Property(e => e.Username)
                 .HasMaxLength(20)
