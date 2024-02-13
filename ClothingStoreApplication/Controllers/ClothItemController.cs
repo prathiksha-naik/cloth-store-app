@@ -23,7 +23,7 @@ namespace ClothingStoreApplication.Controllers
             var clothItems = await _clothItemService.GetAllClothItemsAsync();
             return Ok(clothItems);
         }
-
+      
         [HttpGet("pricerange/{minPrice}/{maxPrice}")]
         public async Task<IEnumerable<ClothItem>> GetClothItemsByPriceRangeAsync(decimal minPrice, decimal maxPrice)
         {

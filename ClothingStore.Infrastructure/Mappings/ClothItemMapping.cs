@@ -9,7 +9,6 @@ namespace ClothStoreInfrastructure.Mappings
         public ClothItemMapping()
         {
             CreateMap<ClothItem, ClothItemDto>();
-            CreateMap<ClothItemDto, ClothItem>();
         }
     }
 }

@@ -1,11 +1,6 @@
 ﻿using ClothingStore.Application.Interface;
 using ClothingStore.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClothingStore.Infrastructure.Repository
 {
@@ -58,6 +53,6 @@ namespace ClothingStore.Infrastructure.Repository
             return _context.Categories.Any(c => c.CategoryId == catId);
         }
 
-        
+
     }
 }
