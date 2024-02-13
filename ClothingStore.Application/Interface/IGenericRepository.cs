@@ -1,10 +1,11 @@
 ﻿namespace ClothingStore.Application.Interface
 {
-    public interface IGenericRepository<Entity> where Entity : class
+    public interface IGenericRepository<T> where T : class
     {
-        Task<IEnumerable<Entity>> GetAllAsync();
-        Task<Entity> GetByIdAsync(int id);
-
+        Task<List<T>> GetAllAsync();
+        Task AddAsync(T entity);
+        Task UpdateAsync(T entity);
+        Task DeleteAsync(int id);
 
 
     }

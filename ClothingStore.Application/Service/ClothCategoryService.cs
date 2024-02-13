@@ -1,53 +1,52 @@
-﻿using ClothingStore.Application.Interface;
+﻿using AutoMapper;
+using ClothingStore.Application.Interface;
 using ClothingStore.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ClothStoreApplication.DataTransferObjects;
 
 namespace ClothingStore.Application.Service
 {
     public class ClothCategoryService
     {
-        private readonly IGenericRepository<Category> _repository;
+        private readonly IGenericRepository<ClothCategory> _clothCategoryRepository;
         private readonly IClothCategoryRepository _categoryRepository;
-        public ClothCategoryService(IGenericRepository<Category> repository,IClothCategoryRepository categoryRepository)
+        private readonly IMapper _mapper;
+
+        public ClothCategoryService(IGenericRepository<ClothCategory> Repository, IClothCategoryRepository clothCategoryRepository, IMapper mapper)
         {
-            _repository = repository;
-            _categoryRepository = categoryRepository;
-        }
-        public async Task<IEnumerable<Category>> GetAllCategory()
-        {
-            return await _repository.GetAllAsync();
+            _clothCategoryRepository = Repository;
+            _categoryRepository = clothCategoryRepository;
+            _mapper = mapper;
         }
 
-        public async Task<Category> GetCategoryById(int clothItemId)
+        public async Task<List<ClothCategoryDto>> GetAllClothCategories()
         {
-            return await _repository.GetByIdAsync(clothItemId);
+            var clothCategories = await _clothCategoryRepository.GetAllAsync();
+            return _mapper.Map<List<ClothCategoryDto>>(clothCategories);
         }
-        public async Task<IEnumerable<ClothItem>> GetClothItemsByCategoryAsync(int categoryId)
-        {
-            return await _categoryRepository.GetClothItemsByCategoryAsync(categoryId);
-        }
-
         public async Task<IEnumerable<ClothItem>> GetClothItemsByClothCategoryAsync(int clothCategoryId)
         {
             return await _categoryRepository.GetClothItemsByClothCategoryAsync(clothCategoryId);
         }
-
         public async Task<IEnumerable<ClothItem>> GetClothItemsByCategoryAndClothCategoryAsync(int categoryId, int clothCategoryId)
         {
             return await _categoryRepository.GetClothItemsByCategoryAndClothCategoryAsync(categoryId, clothCategoryId);
         }
-        public async Task<IEnumerable<ClothItem>> GetClothItemsByBrandNamesAsync(IEnumerable<string> brandNames)
+
+        public async Task AddClothCategory(ClothCategoryDto clothCategoryDto)
         {
-            return await _categoryRepository.GetClothItemsByBrandNamesAsync(brandNames);
+            var clothCategories = _mapper.Map<ClothCategory>(clothCategoryDto);
+            await _clothCategoryRepository.AddAsync(clothCategories);
         }
 
-        public bool CategoryItemExist(int categoryId)
+        public async Task UpdateClothCategory(ClothCategoryDto clothCategoryDto)
         {
-            return _categoryRepository.ClothCategoryExists(categoryId);
+            var clothCategories = _mapper.Map<ClothCategory>(clothCategoryDto);
+            await _clothCategoryRepository.UpdateAsync(clothCategories);
+        }
+
+        public async Task DeleteClothCategory(int clothCategoryId)
+        {
+            await _clothCategoryRepository.DeleteAsync(clothCategoryId);
         }
 
     }

@@ -1,62 +1,73 @@
-﻿using ClothingStore.Application.Service;
+﻿using AutoMapper;
+using ClothingStore.Application.Service;
 using ClothingStore.Domain.Entities;
+using ClothStoreApplication.DataTransferObjects;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
 
 namespace ClothingStoreApplication.Controllers
 {
     [ApiController]
+    [Route("api/categories")]
+    [Authorize]
     public class CategoryController : ControllerBase
     {
-        private readonly ClothCategoryService _service;
-        public CategoryController(ClothCategoryService service)
+        private readonly CategoryService _categoryService;
+        private readonly IMapper _mapper;
+
+        public CategoryController(CategoryService categoryService, IMapper mapper)
         {
-            _service = service;
+            _categoryService = categoryService;
+            _mapper = mapper;
         }
 
-        [HttpGet("GetCategory")]
-        public async Task<ActionResult<IEnumerable<ClothItem>>> GetClothCategory()
+        [HttpGet]
+        public async Task<IActionResult> GetAllCategories()
         {
-            var ClothProducts = await _service.GetAllCategory();
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-            return Ok(ClothProducts);
-        }
-
-        [HttpGet("GetCategoryById")]
-        public async Task<ActionResult<ClothItem>> GetCategoryById(int categoryId)
-        {
-            var clothItem = _service.CategoryItemExist(categoryId);
-            if (clothItem == false)
-                return NotFound();
-            var product = await _service.GetCategoryById(categoryId);
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-            return Ok(product);
+            var categories = await _categoryService.GetAllCategoriesAsync();
+            var categoryDtos = _mapper.Map<IEnumerable<CategoryDto>>(categories);
+            return Ok(categoryDtos);
         }
 
         [HttpGet("GetClothItemsByCategory")]
         public async Task<IEnumerable<ClothItem>> GetClothItemsByCategoryAsync(int categoryId)
         {
-            return await _service.GetClothItemsByCategoryAsync(categoryId);
+            return await _categoryService.GetClothItemsByCategoryAsync(categoryId);
         }
 
-        [HttpGet("GetClothItemsByClothCategory")]
-        public async Task<IEnumerable<ClothItem>> GetClothItemsByClothCategoryAsync(int clothCategoryId)
+        [HttpPost]
+        public async Task<IActionResult> AddCategory([FromBody] CategoryDto categoryDto)
         {
-            return await _service.GetClothItemsByClothCategoryAsync(clothCategoryId);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            await _categoryService.AddCategoryAsync(categoryDto);
+            return CreatedAtAction(nameof(AddCategory), categoryDto);
         }
 
-        [HttpGet("GetClothItemsByCategoryAndClothCategory")]
-        public async Task<IEnumerable<ClothItem>> GetClothItemsByCategoryAndClothCategoryAsync(int categoryId, int clothCategoryId)
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCategory(int id, [FromBody] CategoryDto categoryDto)
         {
-            return await _service.GetClothItemsByCategoryAndClothCategoryAsync(categoryId, clothCategoryId);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var category = _mapper.Map<Category>(categoryDto);
+
+
+            await _categoryService.UpdateCategoryAsync(categoryDto);
+            return NoContent();
         }
 
-        [HttpGet("GetClothItemsByBrandNames")]
-        public async Task<IEnumerable<ClothItem>> GetClothItemsByBrandNamesAsync([FromQuery] IEnumerable<string> brandNames)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCategory(int id)
         {
-            return await _service.GetClothItemsByBrandNamesAsync(brandNames);
+            await _categoryService.DeleteCategoryAsync(id);
+            return NoContent();
         }
     }
 }
