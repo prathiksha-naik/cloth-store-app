@@ -412,3 +412,7 @@ obj/
 
 
 /ClothingStore.Application/obj/Debug/net8.0/
+ClothingStoreApplication/bin/Debug/net8.0/ClothingStoreApplication.dll
+*.dll
+ClothingStoreApplication/bin/Debug/net8.0/ClothingStoreApplication.dll
+*.cache
