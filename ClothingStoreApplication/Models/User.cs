@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ClothingStore.Domain.Entities;
+namespace ClothingStoreApplication.Models;
 
 public partial class User
 {
@@ -9,7 +9,7 @@ public partial class User
 
     public string Username { get; set; } = null!;
 
-    public string Password { get; set; } = null!;
+    public string? Password { get; set; }
 
     public string FullName { get; set; } = null!;
 

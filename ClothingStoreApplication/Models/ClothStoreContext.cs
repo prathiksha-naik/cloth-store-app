@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace ClothingStore.Domain.Entities;
+namespace ClothingStoreApplication.Models;
 
 public partial class ClothStoreContext : DbContext
 {
@@ -219,7 +219,7 @@ public partial class ClothStoreContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Password)
-                .HasMaxLength(20)
+                .HasMaxLength(200)
                 .IsUnicode(false);
             entity.Property(e => e.Username)
                 .HasMaxLength(20)

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ClothingStore.Domain.Entities;
+namespace ClothingStoreApplication.Models;
 
 public partial class ClothItem
 {
@@ -34,6 +34,4 @@ public partial class ClothItem
     public virtual ICollection<SizeVariant> SizeVariants { get; set; } = new List<SizeVariant>();
 
     public virtual ICollection<Wishlist> Wishlists { get; set; } = new List<Wishlist>();
-
-    //public List<string> AvailableSizes { get; set; } = new List<string>();
 }

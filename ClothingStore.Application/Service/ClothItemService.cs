@@ -19,17 +19,15 @@ namespace ClothingStore.Application.Service
             _clothItemRepository = clothItemRepository;
         }
 
-       
-        public async Task<IEnumerable<ClothItemDto>> GetAllClothItemsAsync()
+        public async Task<List<ClothItemDto>> GetAllClothItemsAsync()
         {
-            var clothItems = await _clothItemRepository.GetAllClothProducts();
-            return _mapper.Map<IEnumerable<ClothItemDto>>(clothItems);
+            var clothItems = _mapper.Map<List<ClothItemDto>>(_clothItemRepository.GetAllClothProducts());
+            return clothItems;
         }
         //public async Task<IEnumerable<ClothItem>> GetAllClothItems()
         //{
         //    return await _clothItemRepository.GetAllClothProducts();
         //}
-        
         public async Task<IEnumerable<ClothItem>> GetClothItemsByPriceRangeAsync(decimal minPrice, decimal maxPrice)
         {
             return await _clothItemRepository.GetClothItemsByPriceRangeAsync(minPrice, maxPrice);
