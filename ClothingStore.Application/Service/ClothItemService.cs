@@ -20,9 +20,9 @@ namespace ClothingStore.Application.Service
         public async Task<IEnumerable<ClothItem>> GetAllClothItemsAsync()
         {
             return await _clothItemRepository.GetAllClothProducts();
+           
         }
-
-       
+        
         public async Task<IEnumerable<ClothItem>> GetClothItemsByPriceRangeAsync(decimal minPrice, decimal maxPrice)
         {
             return await _clothItemRepository.GetClothItemsByPriceRangeAsync(minPrice, maxPrice);

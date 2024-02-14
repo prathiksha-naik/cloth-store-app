@@ -13,7 +13,6 @@ namespace ClothingStore.Application.Service
 
         public SizeVariantService( ISizeForCloth sizeRepository, IMapper mapper)
         {
-           
             _sizeRepository = sizeRepository;
             _mapper = mapper;
         }
