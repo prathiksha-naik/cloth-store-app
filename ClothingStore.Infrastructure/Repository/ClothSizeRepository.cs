@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ClothingStore.Infrastructure.Repository
 {
-    public class ClothSizeRepository : ISizeForCloth
+    public class ClothSizeRepository : GenericRepository<SizeVariant>,ISizeForCloth
     {
         private readonly ClothStoreContext _context;
-        public ClothSizeRepository(ClothStoreContext context)
+        public ClothSizeRepository(ClothStoreContext context):base(context)
         {
             _context = context;
         }

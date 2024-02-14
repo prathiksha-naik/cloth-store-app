@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ClothingStore.Infrastructure.Repository
 {
-    public class ClothItemRepository : IClothItemRepository
+    public class ClothItemRepository : GenericRepository<ClothItem>,IClothItemRepository
     {
         private readonly ClothStoreContext _context;
-        public ClothItemRepository(ClothStoreContext context)
+        public ClothItemRepository(ClothStoreContext context):base (context)
         {
             _context = context;
 

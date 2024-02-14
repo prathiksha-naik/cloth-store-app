@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace ClothingStore.Domain.Entities;
 
@@ -35,5 +36,6 @@ public partial class ClothItem
 
     public virtual ICollection<SizeVariant> SizeVariants { get; set; } = new List<SizeVariant>();
 
+    [JsonIgnore]
     public virtual ICollection<Wishlist> Wishlists { get; set; } = new List<Wishlist>();
 }

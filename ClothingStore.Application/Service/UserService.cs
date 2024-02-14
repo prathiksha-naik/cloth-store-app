@@ -23,7 +23,7 @@ namespace ClothingStore.Application.Service
         {
             userRegisterDto.Password = _hashingHelper.HashPassword(userRegisterDto.Password);
             User userEntity = _mapper.Map<User>(userRegisterDto);
-            await _userRepository.AddUser(userEntity);
+            await _userRepository.AddAsync(userEntity);
             return true;
         }
 

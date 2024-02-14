@@ -50,6 +50,12 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddDbContext<ClothStoreContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    options.JsonSerializerOptions.WriteIndented = true;
+});
+
 builder.Services.AddScoped<IClothItemRepository, ClothItemRepository>();
 builder.Services.AddScoped<IClothCategoryRepository, ClothCategoryRepository>();
 builder.Services.AddScoped<ISizeForCloth, ClothSizeRepository>();
@@ -63,13 +69,6 @@ builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<HashingHelper>();
 builder.Services.AddScoped<ClothItemService>();
 builder.Services.AddScoped<SizeVariantService>();
-
-//builder.Services.AddControllers()
-//    .AddJsonOptions(options =>
-//    {
-//        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-//    });
-
 
 
 

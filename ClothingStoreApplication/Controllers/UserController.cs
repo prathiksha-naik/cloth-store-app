@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 
 namespace ClothingStoreApplication.Controllers
 {
@@ -64,7 +65,7 @@ namespace ClothingStoreApplication.Controllers
                 new Claim(ClaimTypes.Name, userLoginDto.Username)
             };
 
-            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
 
             SigningCredentials creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 

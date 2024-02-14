@@ -8,20 +8,19 @@ namespace ClothingStore.Application.Service
 {
     public class SizeVariantService
     {
-        private readonly IGenericRepository<SizeVariant> _sizeVariantRepository;
         private readonly IMapper _mapper;
         private readonly ISizeForCloth _sizeRepository;
 
-        public SizeVariantService(IGenericRepository<SizeVariant> sizeVariantRepository, ISizeForCloth sizeRepository, IMapper mapper)
+        public SizeVariantService( ISizeForCloth sizeRepository, IMapper mapper)
         {
-            _sizeVariantRepository = sizeVariantRepository;
+           
             _sizeRepository = sizeRepository;
             _mapper = mapper;
         }
 
         public async Task<List<SizeVariantDto>> GetAllSizeVariants()
         {
-            var sizeVariants = await _sizeVariantRepository.GetAllAsync();
+            var sizeVariants = await _sizeRepository.GetAllAsync();
             return _mapper.Map<List<SizeVariantDto>>(sizeVariants);
         }
         public async Task<IEnumerable<SizeVariant>> GetSizeVariantsForClothItem(int clothItemId)
@@ -46,18 +45,18 @@ namespace ClothingStore.Application.Service
         public async Task AddSizeVariant(SizeVariantDto sizeVariantDto)
         {
             var sizeVariants = _mapper.Map<SizeVariant>(sizeVariantDto);
-            await _sizeVariantRepository.AddAsync(sizeVariants);
+            await _sizeRepository.AddAsync(sizeVariants);
         }
 
         public async Task UpdateSizeVariant(SizeVariantDto sizeVariantDto)
         {
             var sizeVariants = _mapper.Map<SizeVariant>(sizeVariantDto);
-            await _sizeVariantRepository.UpdateAsync(sizeVariants);
+            await _sizeRepository.UpdateAsync(sizeVariants);
         }
 
         public async Task DeleteBrand(int sizeVariantId)
         {
-            await _sizeVariantRepository.DeleteAsync(sizeVariantId);
+            await _sizeRepository.DeleteAsync(sizeVariantId);
         }
 
     }

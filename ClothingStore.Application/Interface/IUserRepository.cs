@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ClothingStore.Application.Interface
 {
-    public interface IUserRepository
+    public interface IUserRepository : IGenericRepository<User>
     {
-        Task AddUser(User user);
+        //Task AddUser(User user);
         Task<User> GetByUserNameAsync(string username);
     }
 }
