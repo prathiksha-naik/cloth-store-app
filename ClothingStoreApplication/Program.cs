@@ -53,25 +53,12 @@ builder.Services.AddDbContext<ClothStoreContext>(options => options.UseSqlServer
 builder.Services.AddScoped<IClothItemRepository, ClothItemRepository>();
 builder.Services.AddScoped<IClothCategoryRepository, ClothCategoryRepository>();
 builder.Services.AddScoped<ISizeForCloth, ClothSizeRepository>();
-builder.Services.AddScoped<IHashingHelper, HashingHelper>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<ClothCategoryService>();
 builder.Services.AddScoped<BrandService>();
-builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<HashingHelper>();
 builder.Services.AddScoped<ClothItemService>();
 builder.Services.AddScoped<SizeVariantService>();
-
-//builder.Services.AddControllers()
-//    .AddJsonOptions(options =>
-//    {
-//        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-//    });
-
-
-
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
