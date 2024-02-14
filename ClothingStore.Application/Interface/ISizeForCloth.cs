@@ -2,7 +2,7 @@
 
 namespace ClothingStore.Application.Interface
 {
-    public interface ISizeForCloth
+    public interface ISizeForCloth : IGenericRepository<SizeVariant>
     {
         Task<IEnumerable<SizeVariant>> GetSizeVariantsForClothItem(int clothItemId);
         Task<IEnumerable<ClothItem>> GetClothItemsByParticularSizeAsync(string size);

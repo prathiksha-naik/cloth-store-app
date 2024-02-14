@@ -18,7 +18,7 @@ namespace ClothingStoreApplication.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ClothItemDto>>> GetAllClothItems()
+        public async Task<ActionResult<IEnumerable<ClothItem>>> GetAllClothItems()
         {
             var clothItems = await _clothItemService.GetAllClothItemsAsync();
             return Ok(clothItems);
