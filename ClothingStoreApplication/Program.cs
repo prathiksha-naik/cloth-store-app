@@ -73,7 +73,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                ValidateIssuer = false,
                ValidateAudience = false,
                ValidAudience = builder.Configuration["Jwt:Audience"],
-               ValidIssuer = builder.Configuration["Jwt:Issuer"]
+               ValidIssuer = builder.Configuration["Jwt:Issuer"],
+               ValidateLifetime = true
            };
        });
 
